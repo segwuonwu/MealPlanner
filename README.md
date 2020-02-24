@@ -1,4 +1,8 @@
-# Fullstack meal planning webpage
+# Meal planning web application
+Using Node/Express, Sequelize to create a web app
+
+## Goal
+Build a meal planning app using CRUD/RESTful Routing
 
 ## MVP
 * Have a home page and daily page of meals
@@ -10,4 +14,9 @@
 ## Stretch Goals
 * Add favorite meals
 * Add nutrition detials
-* Add some daily activities
+* Cleanup my code
+
+## routes
+
+
+## Wireframes
