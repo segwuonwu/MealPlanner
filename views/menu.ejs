@@ -1,0 +1,16 @@
+<h2>Welcome
+    <%= currentUser.name %>
+</h2>
+
+<a href="/">Home</a>
+
+<h1>Results</h1>
+<% meals.forEach(function(meal) { %>
+    <div class="meal">
+        <img src="<%= meal.image%>">
+        <h3>
+            <%= meal.title %>
+        </h3>
+
+    </div>
+    <% }) %>
