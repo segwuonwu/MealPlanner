@@ -4,13 +4,16 @@
 
 <a href="/">Home</a>
 
-<h1>Results</h1>
-<% meals.forEach(function(meal) { %>
-    <div class="meal">
-        <img src="<%= meal.image%>">
-        <h3>
-            <%= meal.title %>
-        </h3>
+<h1>Featured Menu</h1>
+<div>
+    <% meals.forEach(function(meal) { %>
+        <div class="meal">
+            <% var value = JSON.parse(meal.value) %>
+                <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
+                <h5>
+                    <%= value.title %>
+                </h5>
 
-    </div>
-    <% }) %>
+        </div>
+        <% }) %>
+</div>

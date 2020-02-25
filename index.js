@@ -47,13 +47,14 @@ app.get('/', function(req, res) {
     res.render('index', { user: req.user });
 });
 
-app.get('/menu', isLoggedIn, function(req, res) {
-    res.render('menu', { user: req.user });
+app.get('/', isLoggedIn, function(req, res) {
+    res.render('index', { user: req.user });
 });
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/', isLoggedIn, require('./controllers/test'));
-app.use('/', require('./controllers/menu'));
+app.use('/menu', require('./controllers/menu'));
+// app.use('/', require('./routes/index'));
 
 var server = app.listen(process.env.PORT || 3000);
 
