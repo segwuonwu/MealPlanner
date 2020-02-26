@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 
 
-router.get('/recipes', function(req, res) {
+router.get('/', function(req, res) {
     axios({
             "method": "GET",
             "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate",
@@ -19,11 +19,11 @@ router.get('/recipes', function(req, res) {
         })
         .then(function(response) {
             // console.log(response)
-            var results = response.data.items;
-
-            console.log("-----------------------")
-            console.log(results);
-            res.render('menu', { meals: results });
+            var meals = response.data.items;
+            // JSON.parse(results)
+            console.log("--------- We are at index.js ---------")
+            console.log(meals);
+            res.render('index', { meals: meals.slice(0, 4) });
         }).catch(err => {
             console.log(err);
         }).finally(function() {

@@ -1,5 +1,5 @@
 <h2>Welcome
-    <%= currentUser.name %>
+    <%//= currentUser.name %>
 </h2>
 
 <a href="/">Home</a>
@@ -13,7 +13,10 @@
                 <h5>
                     <%= value.title %>
                 </h5>
-
+                <form action="/addMenu" method="POST">
+                    <button class="btn btn-primary" type="submit">Add meal</button>
+                </form>
         </div>
+        <br>
         <% }) %>
 </div>

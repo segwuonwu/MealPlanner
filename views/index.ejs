@@ -1,3 +1,19 @@
 <h2>Home</h2>
 
 <h1>Sample Meals</h1>
+
+<div>
+    <% meals.forEach(function(meal) { %>
+        <div class="meal">
+            <% var value = JSON.parse(meal.value) %>
+                <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
+                <h5>
+                    <%= value.title %>
+                </h5>
+                <form action="/addMenu" method="POST">
+                    <button class="btn btn-primary" type="submit">Add meal</button>
+                </form>
+        </div>
+        <br>
+        <% }) %>
+</div>
