@@ -2,42 +2,39 @@
 
 <h1>Sample Meals</h1>
 
-<div>
-    <% meals.forEach(function(meal) { %>
-        <div class="meal">
-            <% var value = JSON.parse(meal.value) %>
-                <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
-                <h5>
-                    <%= value.title %>
-                </h5>
-                <form action="/day" method="POST">
+<form action="/day" method="POST">
+    <div>
+        <% meals.forEach(function(meal) { %>
+            <div class="meal">
+                <% var value = JSON.parse(meal.value) %>
+                    <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
+                    <h5>
+                        <%= value.title %>
+                    </h5>
+
                     <div class="custom-select" style="width:50px;">
-                        <select>
-                          <option value="0">Day</option>
-                          <option value="1">Sunday</option>
-                          <option value="2">Monday</option>
-                          <option value="3">Tuesday</option>
-                          <option value="4">Wednesday</option>
-                          <option value="5">Thursday</option>
-                          <option value="6">Friday</option>
-                          <option value="7">Saturday</option>
-                        </select>
+                        <select name="day">
+                        <option value="0">Day</option>
+                        <option value="1">Sunday</option>
+                        <option value="2">Monday</option>
+                        <option value="3">Tuesday</option>
+                        <option value="4">Wednesday</option>
+                        <option value="5">Thursday</option>
+                        <option value="6">Friday</option>
+                        <option value="7">Saturday</option>
+                      </select>
                     </div>
-                    <label class="container">Breakfast
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    <label class="container">Lunch
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    <label class="container">Dinner
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
+                    <input type="radio" name="time">
+                    <label for="time">Breakfast</label>
+                    <input type="radio" name="time">
+                    <label for="time">Lunch</label>
+                    <input type="radio" name="time">
+                    <label for="time">Dinner</label>
+                    <input type="hidden" name="name" value="<%= value.title %>">
+                    <input type="hidden" name="image" value="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
                     <button class="btn btn-primary" type="submit">Add meal</button>
-                </form>
-        </div>
-        <br>
-        <% }) %>
-</div>
+            </div>
+            <br>
+            <% }) %>
+    </div>
+</form>

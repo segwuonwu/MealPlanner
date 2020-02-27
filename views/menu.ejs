@@ -5,17 +5,18 @@
 <a href="/">Home</a>
 
 <h1>Featured Menu</h1>
-<div>
-    <% meals.forEach(function(meal) { %>
-        <div class="meal">
-            <% var value = JSON.parse(meal.value) %>
-                <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
-                <h5>
-                    <%= value.title %>
-                </h5>
-                <form action="/day" method="POST">
+<form action="/day" method="POST">
+    <div>
+        <% meals.forEach(function(meal) { %>
+            <div class="meal">
+                <% var value = JSON.parse(meal.value) %>
+                    <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
+                    <h5>
+                        <%= value.title %>
+                    </h5>
+
                     <div class="custom-select" style="width:50px;">
-                        <select>
+                        <select name="day">
                           <option value="0">Day</option>
                           <option value="1">Sunday</option>
                           <option value="2">Monday</option>
@@ -26,21 +27,15 @@
                           <option value="7">Saturday</option>
                         </select>
                     </div>
-                    <label class="container">Breakfast
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    <label class="container">Lunch
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    <label class="container">Dinner
-                        <input type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
+                    <input type="radio" name="time">
+                    <label for="time">Breakfast</label>
+                    <input type="radio" name="time">
+                    <label for="time">Lunch</label>
+                    <input type="radio" name="time">
+                    <label for="time">Dinner</label>
                     <button class="btn btn-primary" type="submit">Add meal</button>
-                </form>
-        </div>
-        <br>
-        <% }) %>
-</div>
+            </div>
+            <br>
+            <% }) %>
+    </div>
+</form>

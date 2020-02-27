@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     dayofweek.associate = function(models) {
         // associations can be defined here
         models.dayofweek.hasMany(models.menu);
+        models.dayofweek.hasMany(models.user);
     };
     return dayofweek;
 };
