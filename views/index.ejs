@@ -2,9 +2,9 @@
 
 <h1>Sample Meals</h1>
 
-<form action="/day" method="POST">
-    <div>
-        <% meals.forEach(function(meal) { %>
+<div>
+    <% meals.forEach(function(meal) { %>
+        <form action="/day" method="POST" id="addmenu">
             <div class="meal">
                 <% var value = JSON.parse(meal.value) %>
                     <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
@@ -13,15 +13,15 @@
                     </h5>
 
                     <div class="custom-select" style="width:50px;">
-                        <select name="day">
-                        <option value="0">Day</option>
-                        <option value="1">Sunday</option>
-                        <option value="2">Monday</option>
-                        <option value="3">Tuesday</option>
-                        <option value="4">Wednesday</option>
-                        <option value="5">Thursday</option>
-                        <option value="6">Friday</option>
-                        <option value="7">Saturday</option>
+                        <select name="day" id="addmenu">
+                        <!-- <option value="0">Day</option> -->
+                        <option value="sunday">Sunday</option>
+                        <option value="monday">Monday</option>
+                        <option value="tuesday">Tuesday</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="thursday">Thursday</option>
+                        <option value="friday">Friday</option>
+                        <option value="saturday">Saturday</option>
                       </select>
                     </div>
                     <input type="radio" name="time">
@@ -35,6 +35,6 @@
                     <button class="btn btn-primary" type="submit">Add meal</button>
             </div>
             <br>
-            <% }) %>
-    </div>
-</form>
+        </form>
+        <% }) %>
+</div>

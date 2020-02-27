@@ -1,20 +1,23 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('dayofweeks', {
+    return queryInterface.createTable('plans', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      day: {
         type: Sequelize.STRING
       },
       time: {
         type: Sequelize.STRING
       },
-      menuId: {
+      mealId: {
+        type: Sequelize.INTEGER
+      },
+      userId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -28,6 +31,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('dayofweeks');
+    return queryInterface.dropTable('plans');
   }
 };

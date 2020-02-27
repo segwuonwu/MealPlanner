@@ -22,7 +22,7 @@ router.get('/recipes', function(req, res) {
             var results = response.data.items;
 
             console.log("-----------------------")
-            console.log(results);
+                // console.log(results);
             res.render('menu', { meals: results });
         }).catch(err => {
             console.log(err);
