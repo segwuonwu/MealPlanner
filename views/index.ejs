@@ -10,7 +10,31 @@
                 <h5>
                     <%= value.title %>
                 </h5>
-                <form action="/addMenu" method="POST">
+                <form action="/day" method="POST">
+                    <div class="custom-select" style="width:50px;">
+                        <select>
+                          <option value="0">Day</option>
+                          <option value="1">Sunday</option>
+                          <option value="2">Monday</option>
+                          <option value="3">Tuesday</option>
+                          <option value="4">Wednesday</option>
+                          <option value="5">Thursday</option>
+                          <option value="6">Friday</option>
+                          <option value="7">Saturday</option>
+                        </select>
+                    </div>
+                    <label class="container">Breakfast
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    <label class="container">Lunch
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
+                    <label class="container">Dinner
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
                     <button class="btn btn-primary" type="submit">Add meal</button>
                 </form>
         </div>
