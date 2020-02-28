@@ -1,13 +1,25 @@
-<h1>Day: name</h1>
+<% meals.forEach(meal => {%>
+    <% if(meal){%>
+        <h1>
+            <%= meal.day%>
+        </h1>
+        <div>
+            <h3>
+                <%= meal.time%>
+            </h3>
+        </div>
 
-<div>
-    <h3>Breakfast</h3>
-</div>
+        <div>
+            <img src="<%= meal.image%>">
+        </div>
 
-<div>
-    <h3>Lunch</h3>
-</div>
+        <div>
+            <h4>
+                <%= meal.name%>
+            </h4>
 
-<div>
-    <h3>Dinner</h3>
-</div>
+        </div>
+        <%}else{%>
+            <h2>No meal selected this day</h2>
+            <%}%>
+                <% })%>

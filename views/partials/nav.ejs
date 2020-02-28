@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default">
+    <ul class="nav">
+        <% if (currentUser) {%>
+            <li>
+                <div class="dropdown">
+                    <button class="dropbtn">Days 
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                    <div class="dropdown-content">
+                        <a href="/day/sunday">Sunday</a>
+                        <a href="/day/monday">Monday</a>
+                        <a href="/day/tuesday">Tuesday</a>
+                        <a href="/day/wednesday">Wednesday</a>
+                        <a href="/day/thursday">Thursday</a>
+                        <a href="/day/friday">Friday</a>
+                        <a href="/day/saturday">Saturday</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/meal">Profile</a></li>
+            <li><a class="auth" href="/auth/logout">Logout</a></li>
+            <%} else {%>
+                <li><a href="/menu">Menu</a></li>
+                <li><a class="auth" href="/auth/signup">Signup</a></li>
+                <li><a class="auth" href="/auth/login">Login</a></li>
+                <%}%>
+    </ul>
+</nav>

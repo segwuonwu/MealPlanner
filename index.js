@@ -44,7 +44,8 @@ app.use(function(req, res, next) {
 
 app.use('/', require('./controllers/index'));
 app.use('/menu', require('./controllers/menu'));
-app.use('/day', require('./controllers/days'))
+app.use('/meal', require('./controllers/meal'))
+app.use('/day', require('./controllers/day'))
 
 // app.get('/', function(req, res) {
 //     console.log(`🙌User is ${req.user ? req.user.name : 'not logged in'}`);

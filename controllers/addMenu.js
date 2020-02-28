@@ -10,7 +10,7 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
     // TODO: Get form data and add a new record to DB
     console.log(req.bod)
-    res.redirect('/day');
+    res.redirect('/day/:id');
 });
 
 

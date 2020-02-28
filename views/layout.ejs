@@ -15,34 +15,7 @@
 <body>
     <!-- <%- JSON.stringify(currentUser) %> -->
     <header class="container">
-        <nav class="navbar navbar-default">
-            <ul class="nav">
-                <% if (currentUser) {%>
-                    <li>
-                        <div class="dropdown">
-                            <button class="dropbtn">Days 
-                          <i class="fa fa-caret-down"></i>
-                        </button>
-                            <div class="dropdown-content">
-                                <a href="/day">Sunday</a>
-                                <a href="/day">Monday</a>
-                                <a href="/day">Tuesday</a>
-                                <a href="/day">Wednesday</a>
-                                <a href="/day">Friday</a>
-                                <a href="/day">Saturday</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="/menu/recipes">Menu</a></li>
-                    <li><a class="auth" href="/auth/logout">Logout</a></li>
-                    <%} else {%>
-                        <li><a href="/menu/recipes">Menu</a></li>
-                        <li><a class="auth" href="/auth/signup">Signup</a></li>
-                        <li><a class="auth" href="/auth/login">Login</a></li>
-                        <%}%>
-            </ul>
-        </nav>
-
+        <% include partials/nav %>
     </header>
     <div class="container">
         <% include partials/alerts %>

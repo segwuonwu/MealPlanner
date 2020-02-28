@@ -1,0 +1,25 @@
+<h1>
+    <%= plan.user.name %>
+</h1>
+
+<%plan.meals.forEach(meal => {%>
+    <h1>
+        <%= meal.day%>
+    </h1>
+    <div>
+        <h3>
+            <%= meal.time%>
+        </h3>
+    </div>
+
+    <div>
+        <img src="<%= meal.image%>">
+    </div>
+
+    <div>
+        <h4>
+            <%= meal.name%>
+        </h4>
+
+    </div>
+    <%})%>
