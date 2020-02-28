@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../models');
+const isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/', (req, res) => {
     db.plan.findOne({
@@ -20,7 +21,7 @@ router.get('/', (req, res) => {
 })
 
 // POST /post - create a new post
-router.post('/', function(req, res) {
+router.post('/', isLoggedIn, function(req, res) {
     console.log(req.body);
     console.log(req.user)
     db.plan.findOrCreate({
