@@ -6,10 +6,11 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 router.get('/', (req, res) => {
     db.plan.findOne({
         where: {
-            id: req.user.id
+            userId: req.user.id
         },
         include: [db.user, db.meal]
     }).then(function(plan) {
+        console.log(plan)
         if (!plan) {
             // throw Error()
             res.render('profile')

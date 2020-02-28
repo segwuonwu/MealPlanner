@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
         })
         .then(function(plan) {
             var hasPlan = plan.meals.filter(meal => {
-                (meal.dataValues.day === req.params.day) && (meal.dataValues.time === req.params.time)
+                (meal.dataValues.day.toLowerCase() === req.params.day) && (meal.dataValues.time === req.params.time)
             })
             db.meal.findOrCreate({
                 where: {
