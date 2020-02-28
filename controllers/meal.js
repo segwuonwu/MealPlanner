@@ -9,8 +9,13 @@ router.get('/', (req, res) => {
         },
         include: [db.user, db.meal]
     }).then(function(plan) {
-        if (!plan) throw Error()
-        res.render('meal', { plan: plan })
+        if (!plan) {
+            // throw Error()
+            res.render('profile')
+        } else {
+            res.render('meal', { plan: plan })
+        }
+
     });
 })
 

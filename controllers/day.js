@@ -9,9 +9,15 @@ router.get('/:day', (req, res) => {
         },
         include: [db.user, db.meal]
     }).then(function(plan) {
-        var selected = plan.meals.filter(meal => meal.dataValues.day === req.params.day)
-        if (!plan.meals) throw Error()
-        res.render('day', { plan: plan, meals: selected })
+        if (!plan) {
+            res.render('noMeal')
+        } else {
+            console.log(req.params.day)
+            var selected = plan.meals.filter(meal => meal.dataValues.day.toLowerCase() === req.params.day)
+            if (!plan.meals) throw Error()
+            res.render('day', { plan: plan, meals: selected })
+        }
+
     });
 })
 
@@ -36,7 +42,9 @@ router.post('/', (req, res) => {
             })
             if (hasPlan.length) {
                 plan.addMeal(meal).then(() => {
-                    res.redirect(`day/${req.body.day.toLowerCase()}`);
+                    if (meal) {
+                        res.redirect(`day/:${req.body.day.toLowerCase()}`);
+                    }
                 })
             }
         })
