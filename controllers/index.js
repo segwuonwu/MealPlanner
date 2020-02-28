@@ -18,11 +18,8 @@ router.get('/', function(req, res) {
             }
         })
         .then(function(response) {
-            // console.log(response)
             var meals = response.data.items;
-            // JSON.parse(results)
             console.log("--------- We are at index.js ---------")
-                // console.log(meals);
             res.render('index', { meals: meals.slice(0, 3) });
         }).catch(err => {
             console.log(err);
