@@ -21,8 +21,9 @@ router.get('/', function(req, res) {
             var meals = response.data.items;
             console.log("--------- We are at index.js ---------")
             res.render('index', { meals: meals.slice(0, 3) });
-        }).catch(err => {
-            console.log(err);
+        }).catch(function(error) {
+            console.log(error)
+            res.status(400).render('main/404')
         }).finally(function() {
             console.log("Made it to this function!");
         })

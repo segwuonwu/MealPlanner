@@ -10,21 +10,23 @@ router.get('/', (req, res) => {
         },
         include: [db.user, db.meal]
     }).then(function(plan) {
-        console.log(plan)
+        // console.log(plan)
         if (!plan) {
             // throw Error()
             res.render('profile')
         } else {
             res.render('meal', { plan: plan })
         }
-
+    }).catch(function(error) {
+        console.log(error)
+        res.status(400).render('main/404')
     });
 })
 
 // POST /post - create a new post
 router.post('/', isLoggedIn, function(req, res) {
-    console.log(req.body);
-    console.log(req.user)
+    // console.log(req.body);
+    // console.log(req.user)
     db.plan.findOrCreate({
             where: {
                 name: "This week's meal",
@@ -45,7 +47,24 @@ router.post('/', isLoggedIn, function(req, res) {
                     res.redirect('/meal');
                 })
             })
+        }).catch(function(error) {
+            console.log(error)
+            res.status(400).render('main/404')
         })
 })
+
+// DELETE single meal
+router.delete('/:id', (req, res) => {
+    console.log('delete route')
+    db.meal.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(deletedmeal => {
+            // console.log(deletedmeal);
+            res.redirect('meal');
+        });
+});
 
 module.exports = router;

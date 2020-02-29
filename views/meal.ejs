@@ -2,7 +2,8 @@
     <%= plan.user.name %>
 </h1>
 
-<%plan.meals.forEach(meal => {%>
+<%plan.meals.forEach((meal)=> {%>
+
     <h1>
         <%= meal.day%>
     </h1>
@@ -20,6 +21,12 @@
         <h4>
             <%= meal.name%>
         </h4>
-
     </div>
+    <form method="POST" action="/meal/<%= meal.id %>">
+        <input type="hidden" name="name" value="<%= meal.name %>">
+        <input type="hidden" name="day" value="<%= meal.day %>">
+        <input type="hidden" name="time" value="<%= meal.time %>">
+        <input type="hidden" name="image" value="https://spoonacular.com/recipeImages/<%= meal.id%>-312x231.<%= meal.imageType%>">
+        <button class="btn btn-primary" type="submit">Remove</button>
+    </form>
     <%})%>

@@ -17,8 +17,10 @@ router.get('/:day', (req, res) => {
             if (!plan.meals) throw Error()
             res.render('day', { plan: plan, meals: selected })
         }
-
-    });
+    }).catch(function(error) {
+        console.log(error)
+        res.status(400).render('main/404')
+    })
 })
 
 router.post('/', (req, res) => {
@@ -47,7 +49,10 @@ router.post('/', (req, res) => {
                     }
                 })
             }
-        })
+        }).catch(function(error) {
+            console.log(error)
+            res.status(400).render('main/404')
+        });
 })
 
 

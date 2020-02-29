@@ -8,13 +8,13 @@
             <div class="meal">
                 <% var value = JSON.parse(meal.value) %>
                     <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
-                    <h5>
+                    <h4>
                         <%= value.title %>
-                    </h5>
+                    </h4>
 
                     <div class="custom-select" style="width:50px;">
                         <select name="day" id="addmenu">
-                        <option >Day</option>
+                        <option selected="true" disabled>Day</option>
                         <option value="Sunday">Sunday</option>
                         <option value="Monday">Monday</option>
                         <option value="Tuesday">Tuesday</option>

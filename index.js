@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const helmet = require('helmet');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const methodOverride = require("method-override");
 const db = require('./models');
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
 app.use(ejsLayouts);
 app.use(helmet());
+app.use(methodOverride('_method'));
 
 const sessionStore = new SequelizeStore({
     db: db.sequelize,
