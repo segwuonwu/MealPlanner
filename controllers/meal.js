@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const isLoggedIn = require('../middleware/isLoggedIn');
+// const methodOverride = require("method-override");
+// const app = express();
 
 router.get('/', (req, res) => {
     db.plan.findOne({
@@ -54,16 +56,20 @@ router.post('/', isLoggedIn, function(req, res) {
 })
 
 // DELETE single meal
+// app.use(methodOverride('_method'));
 router.delete('/:id', (req, res) => {
-    console.log('delete route')
+    console.log('---------- delete route-------------')
     db.meal.destroy({
             where: {
                 id: req.params.id
             }
         })
-        .then(deletedmeal => {
+        .then(() => {
             // console.log(deletedmeal);
-            res.redirect('meal');
+            res.redirect('/meal');
+        }).catch(function(error) {
+            console.log(error)
+            res.status(400).render('main/404')
         });
 });
 

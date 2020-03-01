@@ -1,6 +1,9 @@
 <nav class="navbar navbar-default">
     <ul class="nav">
         <% if (currentUser) {%>
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
+            <li><a href="/meal">Profile</a></li>
             <li>
                 <div class="dropdown">
                     <button class="dropbtn">Days 
@@ -17,10 +20,9 @@
                     </div>
                 </div>
             </li>
-            <li><a href="/menu">Menu</a></li>
-            <li><a href="/meal">Profile</a></li>
             <li><a class="auth" href="/auth/logout">Logout</a></li>
             <%} else {%>
+                <li><a href="/">Home</a></li>
                 <li><a href="/menu">Menu</a></li>
                 <li><a class="auth" href="/auth/signup">Signup</a></li>
                 <li><a class="auth" href="/auth/login">Login</a></li>

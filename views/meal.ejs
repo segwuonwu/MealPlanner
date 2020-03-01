@@ -3,7 +3,6 @@
 </h1>
 
 <%plan.meals.forEach((meal)=> {%>
-
     <h1>
         <%= meal.day%>
     </h1>
@@ -12,17 +11,15 @@
             <%= meal.time%>
         </h3>
     </div>
-
     <div>
         <img src="<%= meal.image%>">
     </div>
-
     <div>
         <h4>
-            <%= meal.name%>
+            <%= meal.name %>
         </h4>
     </div>
-    <form method="POST" action="/meal/<%= meal.id %>">
+    <form action="/meal/<%= meal.id %>?_method=DELETE" method="POST">
         <input type="hidden" name="name" value="<%= meal.name %>">
         <input type="hidden" name="day" value="<%= meal.day %>">
         <input type="hidden" name="time" value="<%= meal.time %>">
