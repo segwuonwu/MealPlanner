@@ -23,7 +23,7 @@ router.get('/', function(req, res) {
 
             console.log("-----------------------")
                 // console.log(results);
-            res.render('menu', { meals: results });
+            res.render('menu', { meals: results.slice(0, 16) });
         }).catch(function(error) {
             console.log(error)
             res.status(400).render('main/404')

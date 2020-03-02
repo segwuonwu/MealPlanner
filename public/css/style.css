@@ -1,5 +1,16 @@
-body {
+/* body {
     background-color: #e4a8a8c7;
+} */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #e4a8a8c7;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 .alert {
@@ -120,16 +131,19 @@ a {
     color: white;
     text-align: center;
     border-radius: 4px;
+    /* margin-top: 10%; */
 }
 
 .title {
     text-align: center;
+    font-family: 'Fauna One';
 }
 
 .header {
     /* text-align: center; */
     margin-top: 10px;
     margin-bottom: 20px;
+    font-family: 'Scada'
 }
 
 .days {
@@ -137,4 +151,8 @@ a {
     width: 30%;
     /* border: 3px solid green; */
     padding: 10px;
+}
+
+.menu {
+    margin-bottom: 60px;
 }
