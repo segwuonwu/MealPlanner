@@ -1,29 +1,32 @@
-<h1>
-    <%= plan.user.name %>
+<h1 class="title">
+    <%= plan.user.name %>'s Profile
 </h1>
-
-<%plan.meals.forEach((meal)=> {%>
-    <h1>
-        <%= meal.day%>
-    </h1>
-    <div>
-        <h3>
-            <%= meal.time%>
-        </h3>
-    </div>
-    <div>
-        <img src="<%= meal.image%>">
-    </div>
-    <div>
-        <h4>
-            <%= meal.name %>
-        </h4>
-    </div>
-    <form action="/meal/<%= meal.id %>?_method=DELETE" method="POST">
-        <input type="hidden" name="name" value="<%= meal.name %>">
-        <input type="hidden" name="day" value="<%= meal.day %>">
-        <input type="hidden" name="time" value="<%= meal.time %>">
-        <input type="hidden" name="image" value="https://spoonacular.com/recipeImages/<%= meal.id%>-312x231.<%= meal.imageType%>">
-        <button class="btn btn-primary" type="submit">Remove</button>
-    </form>
-    <%})%>
+<div>
+    <%plan.meals.forEach((meal)=> {%>
+        <h1>
+            <%= meal.day%>
+        </h1>
+        <div>
+            <h3>
+                <%= meal.time%>
+            </h3>
+        </div>
+        <div>
+            <img src="<%= meal.image%>">
+        </div>
+        <div>
+            <h4>
+                <%= meal.name %>
+            </h4>
+        </div>
+        <form action="/meal/<%= meal.id %>?_method=DELETE" method="POST">
+            <input type="hidden" name="name" value="<%= meal.name %>">
+            <input type="hidden" name="day" value="<%= meal.day %>">
+            <input type="hidden" name="time" value="<%= meal.time %>">
+            <input type="hidden" name="image" value="https://spoonacular.com/recipeImages/<%= meal.id%>-312x231.<%= meal.imageType%>">
+            <button class="btn btn-primary" type="submit">Remove</button>
+        </form>
+        <br>
+        <%})%>
+            <br>
+</div>

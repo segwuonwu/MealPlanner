@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 const isLoggedIn = require('../middleware/isLoggedIn');
-// const methodOverride = require("method-override");
-// const app = express();
 
 router.get('/', (req, res) => {
     db.plan.findOne({
@@ -12,7 +10,6 @@ router.get('/', (req, res) => {
         },
         include: [db.user, db.meal]
     }).then(function(plan) {
-        // console.log(plan)
         if (!plan) {
             // throw Error()
             res.render('profile')
@@ -27,8 +24,6 @@ router.get('/', (req, res) => {
 
 // POST /post - create a new post
 router.post('/', isLoggedIn, function(req, res) {
-    // console.log(req.body);
-    // console.log(req.user)
     db.plan.findOrCreate({
             where: {
                 name: "This week's meal",
@@ -45,7 +40,6 @@ router.post('/', isLoggedIn, function(req, res) {
                 }
             }).then(([meal, created]) => {
                 plan.addMeal(meal).then(meal => {
-                    // console.log(meal, 'add to', plan);
                     res.redirect('/meal');
                 })
             })
@@ -65,7 +59,6 @@ router.delete('/:id', (req, res) => {
             }
         })
         .then(() => {
-            // console.log(deletedmeal);
             res.redirect('/meal');
         }).catch(function(error) {
             console.log(error)

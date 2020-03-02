@@ -1,40 +1,45 @@
-<h1>
+<h1 class="title">
     Featured Menu
 </h1>
 
-<div>
+<div class="row">
     <% meals.forEach(function(meal) { %>
         <form action="/meal" method="POST" id="addmenu">
-            <div class="meal">
-                <% var value = JSON.parse(meal.value) %>
-                    <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
-                    <h4>
-                        <%= value.title %>
-                    </h4>
+            <!-- <div class="meal"> -->
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <% var value = JSON.parse(meal.value) %>
+                        <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>" style="width:100%">
+                        <h4>
+                            <%= value.title %>
+                        </h4>
 
-                    <div class="custom-select" style="width:50px;">
-                        <select name="day" id="addmenu">
-                      <option selected="true" disabled>Day</option>
-                      <option value="Sunday">Sunday</option>
-                      <option value="Monday">Monday</option>
-                      <option value="Tuesday">Tuesday</option>
-                      <option value="Wednesday">Wednesday</option>
-                      <option value="Thursday">Thursday</option>
-                      <option value="Friday">Friday</option>
-                      <option value="Saturday">Saturday</option>
-                    </select>
-                    </div>
-                    <input type="radio" name="time" value="breakfast">
-                    <label for="time">Breakfast</label>
-                    <input type="radio" name="time" value="lunch">
-                    <label for="time">Lunch</label>
-                    <input type="radio" name="time" value="dinner">
-                    <label for="time">Dinner</label>
-                    <input type="hidden" name="name" value="<%= value.title %>">
-                    <input type="hidden" name="image" value="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
-                    <button class="btn btn-primary" type="submit">Add meal</button>
+                        <div class="custom-select" style="width:50px;">
+                            <select name="day" id="addmenu">
+                        <option selected="true" disabled>Day</option>
+                        <option value="Sunday">Sunday</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                      </select>
+                        </div>
+                        <input type="radio" name="time" value="Breakfast">
+                        <label for="time">Breakfast</label>
+                        <input type="radio" name="time" value="Lunch">
+                        <label for="time">Lunch</label>
+                        <input type="radio" name="time" value="Dinner">
+                        <label for="time">Dinner</label>
+                        <input type="hidden" name="name" value="<%= value.title %>">
+                        <input type="hidden" name="image" value="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
+                        <button class="btn btn-primary" type="submit">Add meal</button>
+                </div>
             </div>
+            <!-- </div> -->
             <br>
         </form>
         <% }) %>
+
 </div>

@@ -1,11 +1,12 @@
-<nav class="navbar navbar-default">
-    <ul class="nav">
-        <% if (currentUser) {%>
-            <li><a href="/">Home</a></li>
-            <li><a href="/menu">Menu</a></li>
-            <li><a href="/meal">Profile</a></li>
-            <li>
-                <div class="dropdown">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <% if (currentUser) {%>
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="/menu">Menu</a></li>
+                <li><a href="/meal">Profile</a></li>
+
+                <li class="dropdown">
                     <button class="dropbtn">Days 
                   <i class="fa fa-caret-down"></i>
                 </button>
@@ -18,14 +19,21 @@
                         <a href="/day/friday">Friday</a>
                         <a href="/day/saturday">Saturday</a>
                     </div>
-                </div>
-            </li>
-            <li><a class="auth" href="/auth/logout">Logout</a></li>
-            <%} else {%>
-                <li><a href="/">Home</a></li>
-                <li><a href="/menu">Menu</a></li>
-                <li><a class="auth" href="/auth/signup">Signup</a></li>
-                <li><a class="auth" href="/auth/login">Login</a></li>
-                <%}%>
-    </ul>
+                </li>
+                <ul class="nav navbar-nav logout">
+                    <li><a href="/auth/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+                <%} else {%>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/menu">Menu</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/auth/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="/auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                    <%}%>
+        </ul>
+
+    </div>
 </nav>

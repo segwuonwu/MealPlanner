@@ -38,8 +38,8 @@ a {
     font-size: 16px;
     border: none;
     outline: none;
-    color: white;
-    padding: 10px 15px;
+    color: #9d9d9d;
+    padding: 15px;
     background-color: inherit;
     font-family: inherit;
     margin: 0;
@@ -76,6 +76,65 @@ a {
     display: block;
 }
 
-a.auth {
-    float: right;
+.logout {
+    margin-left: 520px;
+}
+
+.navbar-right {
+    margin-left: 620px;
+    /* float: right; */
+}
+
+.input-container {
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.icon {
+    padding: 10px;
+    background: dodgerblue;
+    color: white;
+    min-width: 50px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+}
+
+.input-field:focus {
+    border: 2px solid dodgerblue;
+}
+
+.footer {
+    margin-left: auto;
+    display: block;
+    justify-content: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.title {
+    text-align: center;
+}
+
+.header {
+    /* text-align: center; */
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.days {
+    margin: auto;
+    width: 30%;
+    /* border: 3px solid green; */
+    padding: 10px;
 }
