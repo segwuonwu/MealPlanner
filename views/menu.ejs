@@ -2,20 +2,21 @@
     Featured Menu
 </h1>
 
-<div class="row">
-    <% meals.forEach(function(meal) { %>
-        <form action="/meal" method="POST" id="addmenu">
-            <!-- <div class="meal"> -->
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <% var value = JSON.parse(meal.value) %>
-                        <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>" style="width:100%">
-                        <h4>
-                            <%= value.title %>
-                        </h4>
+<div class="container">
+    <div class="row align-items-center">
+        <% meals.forEach(function(meal) { %>
+            <form action="/meal" method="POST" id="addmenu">
+                <!-- <div class="meal"> -->
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <% var value = JSON.parse(meal.value) %>
+                            <img src="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>" style="width:100%" class="myimage img-responsive">
+                            <h4 class="name">
+                                <%= value.title %>
+                            </h4>
 
-                        <div class="custom-select" style="width:50px;">
-                            <select name="day" id="addmenu">
+                            <div class="custom-select" style="width:50px;">
+                                <select name="day" id="addmenu">
                         <option selected="true" disabled>Day</option>
                         <option value="Sunday">Sunday</option>
                         <option value="Monday">Monday</option>
@@ -25,21 +26,21 @@
                         <option value="Friday">Friday</option>
                         <option value="Saturday">Saturday</option>
                       </select>
-                        </div>
-                        <input type="radio" name="time" value="Breakfast">
-                        <label for="time">Breakfast</label>
-                        <input type="radio" name="time" value="Lunch">
-                        <label for="time">Lunch</label>
-                        <input type="radio" name="time" value="Dinner">
-                        <label for="time">Dinner</label>
-                        <input type="hidden" name="name" value="<%= value.title %>">
-                        <input type="hidden" name="image" value="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
-                        <button class="btn btn-primary" type="submit">Add meal</button>
+                            </div>
+                            <input type="radio" name="time" value="Breakfast">
+                            <label for="time">Breakfast</label>
+                            <input type="radio" name="time" value="Lunch">
+                            <label for="time">Lunch</label>
+                            <input type="radio" name="time" value="Dinner">
+                            <label for="time">Dinner</label>
+                            <input type="hidden" name="name" value="<%= value.title %>">
+                            <input type="hidden" name="image" value="https://spoonacular.com/recipeImages/<%= value.id%>-312x231.<%= value.imageType%>">
+                            <button class="btn btn-primary" type="submit">Add meal</button>
+                    </div>
                 </div>
-            </div>
-            <!-- </div> -->
-            <br>
-        </form>
-        <% }) %>
-
+                <!-- </div> -->
+                <br>
+            </form>
+            <% }) %>
+    </div>
 </div>
