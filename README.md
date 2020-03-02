@@ -5,18 +5,32 @@ Using Node/Express, Sequelize to create a web app
 Build a meal planning app using CRUD/RESTful Routing
 
 ## MVP
-* Have a home page and daily page of meals
+* Have a home page and menu page of meals
+* Days page for a particular day
 * Add a menu button
 * Add a drop down button for the days
 * Add a login, logout and signup authentication
-* Add ability to delete items from the days page
+* Add ability to add and delete items
 
 ## Stretch Goals
-* Add favorite meals
+* Add profile page to show all selected meals
 * Add nutrition detials
 * Cleanup my code
 
-## routes
+## Routes
+I used the GET and POST route to add and remove items from my page
 
+## Technologies
+ * Express
+ * Node.js
+ * Express-ejs-layouts
+ * CSS
+ * Bootstrap
+ * Sequelize
+ * Axios
+ * Router
+ * Postgres DB
 
-## Wireframes
+## Intital Wireframes
+
+## Final Wireframes
