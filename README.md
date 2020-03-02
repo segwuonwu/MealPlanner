@@ -18,9 +18,10 @@ Build a meal planning app using CRUD/RESTful Routing
 * Cleanup my code
 
 ## Routes
-I use the GET and POST route to add and remove items from my page
+I use the GET, POST and DELETE route
 
 ## Technologies
+ * spoonacular-recipe-food-nutrition API
  * Express
  * Node.js
  * Express-ejs-layouts
