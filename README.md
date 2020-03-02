@@ -18,7 +18,7 @@ Build a meal planning app using CRUD/RESTful Routing
 * Cleanup my code
 
 ## Routes
-I used the GET and POST route to add and remove items from my page
+I use the GET and POST route to add and remove items from my page
 
 ## Technologies
  * Express
