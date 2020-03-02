@@ -9,7 +9,7 @@ Build a meal planning app using CRUD/RESTful Routing
 * Add a menu button
 * Add a drop down button for the days
 * Add a login, logout and signup authentication
-* Add ability to edit and delete items from the days page
+* Add ability to delete items from the days page
 
 ## Stretch Goals
 * Add favorite meals
