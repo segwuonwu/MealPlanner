@@ -4,6 +4,8 @@ Using Node/Express, Sequelize to create a web app
 ## Goal
 Build a meal planning app using CRUD/RESTful Routing
 
+[DEMO](https://mvp-mealplan.herokuapp.com/)
+
 ## MVP
 * Have a home page and menu page of meals
 * Days page for a particular day
