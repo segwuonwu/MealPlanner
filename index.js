@@ -29,6 +29,7 @@ const sessionStore = new SequelizeStore({
 app.use(session({
     secret: process.env.SESSION_SECRET,
     save: false,
+    resave: true,
     saveUninitialized: true
 }))
 
