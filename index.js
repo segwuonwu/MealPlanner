@@ -45,7 +45,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.use('/', require('./controllers/index'));
+app.use('*', require('./controllers/index'));
 app.use('/menu', require('./controllers/menu'));
 app.use('/meal', require('./controllers/meal'))
 app.use('/day', require('./controllers/day'))
