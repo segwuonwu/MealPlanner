@@ -50,19 +50,7 @@ app.use('/menu', require('./controllers/menu'));
 app.use('/meal', require('./controllers/meal'))
 app.use('/day', require('./controllers/day'))
 
-// app.get('/', function(req, res) {
-//     console.log(`🙌User is ${req.user ? req.user.name : 'not logged in'}`);
-//     res.render('index');
-// });
-
-// app.get('/', isLoggedIn, function(req, res) {
-//     res.render('index', { user: req.user });
-// });
-
 app.use('/auth', require('./controllers/auth'));
-// app.use('/', isLoggedIn, require('./controllers/test'));
-
-
 
 var server = app.listen(process.env.PORT || 3000);
 
