@@ -40,11 +40,9 @@
     "passport-local": "^1.0.0",
     "pg": "^7.18.2",
     "sequelize": "^5.21.5",
-    "sequelize-cli": "^5.5.1"
+    "sequelize-cli": "^5.5.1",
+    "serve": "^11.3.0"
   },
-  "scripts": {
-    "start": "node index.js"
- },
   "description": "Using Node/Express, Sequelize to create a web app",
   "directories": {
     "test": "test"
