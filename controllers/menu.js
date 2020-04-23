@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 
 
-router.get('/', function(req, res) {
+router.get('*', function(req, res) {
     axios({
             "method": "GET",
             "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/mealplans/generate",
