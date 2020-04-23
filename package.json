@@ -42,6 +42,9 @@
     "sequelize": "^5.21.5",
     "sequelize-cli": "^5.5.1"
   },
+  "scripts": {
+    "start": "node index.js"
+ },
   "description": "Using Node/Express, Sequelize to create a web app",
   "directories": {
     "test": "test"
