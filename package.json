@@ -22,9 +22,6 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "16.13.1",
-    "react-scripts": "3.4.1",
     "acorn": "^7.1.1",
     "axios": "^0.19.2",
     "bcrypt": "^3.0.8",
@@ -58,5 +55,4 @@
     "url": "https://github.com/segwuonwu/SEI29_Project2/issues"
   },
   "homepage": "https://github.com/segwuonwu/SEI29_Project2#readme"
-
 }
